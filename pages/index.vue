@@ -261,27 +261,27 @@ const socialLinks = [
   {
     name: 'GitHub',
     icon: 'github',
-    url: 'https://github.com'
+    url: 'https://github.com/pawelkucia'
   },
   {
     name: 'LinkedIn',
     icon: 'linkedin',
-    url: 'https://linkedin.com'
+    url: 'https://linkedin.com/in/pawelkucia'
   },
   {
-    name: 'Twitter',
+    name: 'X (Twitter)',
     icon: 'twitter',
-    url: 'https://twitter.com'
+    url: 'https://x.com/pawelkucia'
   },
   {
     name: 'Instagram',
     icon: 'instagram',
-    url: 'https://instagram.com'
+    url: 'https://instagram.com/pawelkucia'
   },
   {
     name: 'Facebook',
     icon: 'facebook',
-    url: 'https://facebook.com'
+    url: 'https://facebook.com/pawelkucia.dev'
   }
 ]
 
@@ -452,5 +452,12 @@ const testimonials = [
 
 .typing-animation {
   min-height: 3.5rem;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
 }
 </style>

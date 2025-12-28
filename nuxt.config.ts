@@ -11,9 +11,9 @@ export default defineNuxtConfig({
     preference: 'dark',
     fallback: 'dark'
   },
-  css: [
-    '@fortawesome/fontawesome-svg-core/styles.css'
-  ],
+  build: {
+    transpile: ['@fortawesome/fontawesome-svg-core', '@fortawesome/vue-fontawesome']
+  },
   app: {
     head: {
       title: 'Paweł Kucia - Full Stack Engineer',

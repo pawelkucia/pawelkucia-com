@@ -5,11 +5,14 @@
         © {{ new Date().getFullYear() }} Paweł Kucia. All rights reserved.
       </p>
       <div class="mt-4 md:mt-0">
+        <span class="text-sm text-gray-600 dark:text-gray-400">Supported by&nbsp;</span>
         <a 
-          href="mailto:contact@pawelkucia.com" 
+          href="https://top4all.pl"
+          target="_blank"
+          rel="noopener noreferrer"
           class="text-sm text-gray-600 dark:text-gray-400 hover:text-accent-blue dark:hover:text-accent-magenta transition-colors"
         >
-          contact@pawelkucia.com
+          TOP4ALL
         </a>
       </div>
     </div>
