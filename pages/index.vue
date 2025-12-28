@@ -78,7 +78,7 @@
       </section>
 
       <!-- Experience Section -->
-      <section id="experience" class="container mx-auto px-4 py-20">
+      <section v-if="false" id="experience" class="container mx-auto px-4 py-20">
         <h2 class="text-3xl font-bold mb-12 text-pink-700 text-center">Experience</h2>
         <div class="relative max-w-5xl mx-auto">
           <!-- Timeline Line -->
@@ -123,7 +123,7 @@
       </section>
 
       <!-- Testimonials Section -->
-      <section id="testimonials" class="container mx-auto px-4 py-20">
+      <section v-if="false" id="testimonials" class="container mx-auto px-4 py-20">
         <h2 class="text-3xl font-bold mb-12 text-pink-700 text-center">What People Say</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div v-for="testimonial in testimonials" :key="testimonial.id" 
