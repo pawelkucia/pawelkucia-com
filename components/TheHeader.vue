@@ -2,18 +2,14 @@
   <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
     <div 
       :class="[
-        'container mx-auto px-4 py-2 mt-2 transition-colors transition-shadow duration-300',
+        'container mx-auto px-4 py-0 mt-2 transition-colors transition-shadow duration-300',
         isScrolled || isOpen ? 'bg-primary-light/40 dark:bg-primary-dark/40 backdrop-blur-md shadow-lg' : 'bg-transparent', 
         isOpen ? 'rounded-2xl' :'rounded-full'
       ]"
     >
       <div class="flex justify-between items-center">
         <div class="flex items-center gap-2">
-          <span class="text-pink-700 text-3xl font-bold">{PK}</span>
-          <div>
-            <h1 class="font-medium gradient-text">Paweł Kucia</h1>
-            <p class="text-sm text-gray-600 dark:text-pink-100">Software Engineer</p>
-          </div>
+          <span class="text-black dark:text-white text-3xl font-bold">PK.</span>
         </div>
         <div class="flex items-center gap-4">
           <Navigation />
@@ -22,18 +18,18 @@
             
             <button 
               @click="toggleColorMode" 
-              class="text-gray-900 dark:text-pink-100 p-2"
+              class="p-0"
               aria-label="Toggle theme"
             >
               <font-awesome-icon 
                 :icon="['far', colorMode.value === 'dark' ? 'sun' : 'moon']" 
-                class="text-2xl"
+                class="text-2xl text-orange-600 hover:text-orange-500 dark:hover:text-orange-500 transition-colors"
               />
             </button>
 <!-- Hamburger Button -->
             <button 
               @click="isOpen = !isOpen"
-              class="text-gray-900 dark:text-pink-100 p-2"
+              class="p-0 w-[22px]"
               aria-label="Toggle menu"
             >
               <font-awesome-icon 
@@ -48,7 +44,7 @@
       <!-- Mobile Menu -->
             <div 
               v-show="isOpen"
-              class="mx-0 px-4"
+              class="mx-0 py-4"
             >
               <nav class="">
                 <div class="flex flex-col space-y-4">
@@ -56,7 +52,7 @@
                     v-for="item in menuItems" 
                     :key="item.id"
                     :href="`#${item.id}`"
-                    class="text-gray-900 dark:text-pink-100 hover:text-pink-700 transition-colors text-lg"
+                    class="text-gray-900 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-600 transition-colors text-lg"
                     @click="handleClick(item.id)"
                   >
                     {{ item.name }}
@@ -83,7 +79,7 @@ const toggleColorMode = () => {
 const menuItems = [
   { name: 'Home', id: 'home' },
   { name: 'Tech stack', id: 'tech-stack' },
-  { name: 'Experience', id: 'experience' },
+  // { name: 'Experience', id: 'experience' },
   { name: 'Contact', id: 'contact' }
 ]
 

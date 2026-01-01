@@ -4,18 +4,18 @@
       v-for="item in menuItems" 
       :key="item.id"
       :href="`#${item.id}`"
-      class="text-gray-900 dark:text-pink-100 hover:text-pink-700 transition-colors"
+      class="text-gray-900 dark:text-gray-100 hover:text-orange-600 dark:hover:text-orange-600 transition-colors"
       @click="handleClick(item.id)"
     >
       {{ item.name }}
     </a>
     <button 
       @click="toggleColorMode" 
-      class="p-2 rounded-full bg-gray-100 dark:bg-pink-900/30 hover:bg-gray-200 dark:hover:bg-pink-900/50 transition-colors"
+      class="h-[20px] p-0 rounded-full bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent transition-colors"
     >
       <font-awesome-icon 
         :icon="['far', colorMode.value === 'dark' ? 'sun' : 'moon']" 
-        class="text-xl text-pink-700"
+        class="text-xl text-orange-600 hover:text-orange-500 dark:hover:text-orange-500 transition-colors"
       />
     </button>
   </nav>

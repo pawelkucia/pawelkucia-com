@@ -10,7 +10,9 @@ import {
   faVuejs,
   faAws,
   faDocker,
-  faGitAlt
+  faGitAlt,
+  faJs,
+  faBootstrap
 } from '@fortawesome/free-brands-svg-icons'
 import { 
   faSun,
@@ -45,7 +47,9 @@ library.add(
   faDocker,
   faGitAlt,
   faPhone,
-  faLocationDot
+  faLocationDot,
+  faJs,
+  faBootstrap
 )
 
 // This is important, we are going to let Nuxt worry about the CSS

@@ -4,8 +4,20 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxtjs/google-fonts'
   ],
+  googleFonts: {
+    families: {
+      'Geist Mono': [400, 500, 600, 700]
+    },
+    display: 'swap',
+    preload: true,
+    prefetch: true,
+    preconnect: true,
+    download: true,
+    inject: true
+  },
   colorMode: {
     classSuffix: '',
     preference: 'dark',
@@ -18,7 +30,7 @@ export default defineNuxtConfig({
     head: {
       title: 'Paweł Kucia - Full Stack Engineer',
       meta: [
-        { name: 'description', content: 'Full Stack Engineer Portfolio' }
+        { name: 'description', content: 'Paweł Kucia Full Stack Engineer Portfolio' }
       ]
     }
   }

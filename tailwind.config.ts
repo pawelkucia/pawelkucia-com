@@ -5,6 +5,10 @@ export default {
   content: [],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Geist Mono', 'ui-monospace', 'monospace'],
+        mono: ['Geist Mono', 'ui-monospace', 'monospace']
+      },
       colors: {
         primary: {
           dark: '#020617',
