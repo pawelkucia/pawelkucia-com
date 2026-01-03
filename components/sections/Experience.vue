@@ -81,7 +81,7 @@ const experiences = [
     logo: '/images/companies/frogriot.png'
   },
   {
-    company: 'TOP4ALl.PL',
+    company: 'TOP4ALL.PL',
     role: 'Software Engineer',
     start: '2006-01-01',
     end: null,

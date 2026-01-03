@@ -1,24 +1,26 @@
 <template>
   <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
     <div 
-      :class="[
-        'container mx-auto px-4 py-0 mt-2 transition-colors transition-shadow duration-300',
-        isScrolled || isOpen ? 'bg-primary-light/40 dark:bg-primary-dark/40 backdrop-blur-md shadow-lg' : 'bg-transparent', 
-        isOpen ? 'rounded-2xl' :'rounded-full'
-      ]"
+      class="container mx-auto px-4 py-0 mt-2"
     >
       <div class="flex justify-between items-center">
-        <div class="flex items-center gap-2">
+        <div :class="['flex items-center gap-2 transition-all duration-300',
+isScrolled || isOpen ? 'px-4 bg-primary-light/40 dark:bg-primary-dark/30 backdrop-blur-md shadow-lg dark:shadow-blue-500/30' : 'bg-transparent', 
+        isOpen ? 'rounded-2xl' :'rounded-full'
+        ]">
           <span class="text-black dark:text-white text-3xl font-bold">PK.</span>
         </div>
-        <div class="flex items-center gap-4">
+        <div :class="['py-2 flex items-center gap-4 transition-all duration-300',
+          isScrolled || isOpen ? 'px-4 bg-primary-light/40 dark:bg-primary-dark/30 backdrop-blur-md shadow-lg dark:shadow-blue-500/30' : 'bg-transparent', 
+        isOpen ? 'rounded-2xl' :'rounded-full'
+        ]">
           <Navigation />
           <!-- Mobile Menu -->
           <div class="md:hidden flex items-center gap-4">
             
             <button 
               @click="toggleColorMode" 
-              class="p-0"
+              class="p-0 h-[24px]"
               aria-label="Toggle theme"
             >
               <font-awesome-icon 
@@ -29,7 +31,7 @@
 <!-- Hamburger Button -->
             <button 
               @click="isOpen = !isOpen"
-              class="p-0 w-[22px]"
+              class="p-0 w-[22px] h-[24px]"
               aria-label="Toggle menu"
             >
               <font-awesome-icon 
@@ -44,7 +46,7 @@
       <!-- Mobile Menu -->
             <div 
               v-show="isOpen"
-              class="mx-0 py-4"
+              class="w-[200px] float-right mt-4 p-4 px-4 bg-primary-light/40 dark:bg-primary-dark/40 backdrop-blur-md shadow-lg dark:shadow-blue-500/30 rounded-2xl"
             >
               <nav class="">
                 <div class="flex flex-col space-y-4">
@@ -52,7 +54,7 @@
                     v-for="item in menuItems" 
                     :key="item.id"
                     :href="`#${item.id}`"
-                    class="text-gray-900 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-600 transition-colors text-lg"
+                    class="text-gray-900 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-600 transition-colors text-lg text-right"
                     @click="handleClick(item.id)"
                   >
                     {{ item.name }}

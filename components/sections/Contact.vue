@@ -12,7 +12,7 @@
            :title="social.name"
            target="_blank"
            rel="noopener noreferrer"
-           class="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-600 transition-colors">
+           class="text-black dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-600 transition-colors">
           <font-awesome-icon :icon="['fab', social.icon]" class="text-4xl" />
         </a>
       </div>
