@@ -1,20 +1,22 @@
 <template>
   <nav class="hidden md:flex items-center gap-6">
-    <a
-      v-for="item in menuItems"
-      :key="item.id"
-      :href="`/#${item.id}`"
-      class="text-gray-900 dark:text-gray-100 hover:text-orange-600 dark:hover:text-orange-600 transition-colors"
-      @click="handleClick(item.id)"
-    >
-      {{ item.name }}
-    </a>
-    <NuxtLink
-      to="/blog"
-      class="text-gray-900 dark:text-gray-100 hover:text-orange-600 dark:hover:text-orange-600 transition-colors"
-    >
-      Blog
-    </NuxtLink>
+    <template v-for="item in menuItems" :key="item.id || item.path">
+      <NuxtLink
+        v-if="item.path"
+        :to="item.path"
+        class="text-gray-900 dark:text-gray-100 hover:text-orange-600 dark:hover:text-orange-600 transition-colors"
+      >
+        {{ item.name }}
+      </NuxtLink>
+      <a
+        v-else
+        :href="`/#${item.id}`"
+        class="text-gray-900 dark:text-gray-100 hover:text-orange-600 dark:hover:text-orange-600 transition-colors"
+        @click="handleClick(item.id)"
+      >
+        {{ item.name }}
+      </a>
+    </template>
     <button 
       @click="toggleColorMode" 
       class="h-[20px] p-0 rounded-full bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent transition-colors"
