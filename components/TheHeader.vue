@@ -53,7 +53,7 @@ isScrolled || isOpen ? 'px-4 bg-primary-light/40 dark:bg-primary-dark/30 backdro
                   <a
                     v-for="item in menuItems"
                     :key="item.id"
-                    :href="`#${item.id}`"
+                    :href="`/#${item.id}`"
                     class="text-gray-900 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-600 transition-colors text-lg text-right"
                     @click="handleClick(item.id)"
                   >
@@ -80,17 +80,11 @@ import Navigation from '~/components/Navigation.vue'
 const colorMode = useColorMode()
 const isOpen = ref(false)
 const isScrolled = ref(false)
+const { menuItems } = useMenuItems()
 
 const toggleColorMode = () => {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
-
-const menuItems = [
-  { name: 'Home', id: 'home' },
-  { name: 'Tech stack', id: 'tech-stack' },
-  // { name: 'Experience', id: 'experience' },
-  { name: 'Contact', id: 'contact' }
-]
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0
