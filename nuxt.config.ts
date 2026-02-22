@@ -8,6 +8,11 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/google-fonts'
   ],
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
+  },
   content: {
     highlight: {
       theme: 'github-dark'
