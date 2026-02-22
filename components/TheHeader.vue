@@ -63,7 +63,7 @@ isScrolled || isOpen ? 'px-4 bg-primary-light/40 dark:bg-primary-dark/30 backdro
                       v-else
                       :href="`/#${item.id}`"
                       class="text-gray-900 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-600 transition-colors text-lg text-right"
-                      @click="handleClick(item.id)"
+                      @click="handleClick(item.id ?? '')"
                     >
                       {{ item.name }}
                     </a>

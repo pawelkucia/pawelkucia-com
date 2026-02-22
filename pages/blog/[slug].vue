@@ -3,12 +3,13 @@
     <TheHeader />
   <div class="pt-28 pb-16">
     <div class="container mx-auto px-4 max-w-3xl">
-      <NuxtLink
-        to="/blog"
-        class="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors mb-10"
-      >
-        ← Back to blog
-      </NuxtLink>
+      <Breadcrumbs
+        :crumbs="[
+          { label: 'Home', to: '/' },
+          { label: 'Blog', to: '/blog' },
+          { label: post?.title ?? slug }
+        ]"
+      />
 
       <template v-if="post">
         <header class="mb-10">
