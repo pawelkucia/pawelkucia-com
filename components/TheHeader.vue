@@ -50,8 +50,8 @@ isScrolled || isOpen ? 'px-4 bg-primary-light/40 dark:bg-primary-dark/30 backdro
             >
               <nav class="">
                 <div class="flex flex-col space-y-4">
-                  <a 
-                    v-for="item in menuItems" 
+                  <a
+                    v-for="item in menuItems"
                     :key="item.id"
                     :href="`#${item.id}`"
                     class="text-gray-900 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-600 transition-colors text-lg text-right"
@@ -59,6 +59,13 @@ isScrolled || isOpen ? 'px-4 bg-primary-light/40 dark:bg-primary-dark/30 backdro
                   >
                     {{ item.name }}
                   </a>
+                  <NuxtLink
+                    to="/blog"
+                    class="text-gray-900 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-600 transition-colors text-lg text-right"
+                    @click="isOpen = false"
+                  >
+                    Blog
+                  </NuxtLink>
                 </div>
               </nav>
             </div>
