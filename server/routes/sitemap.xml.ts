@@ -1,12 +1,16 @@
-import { readdir, readFile } from 'node:fs/promises'
+import { readdir, open } from 'node:fs/promises'
 import { join } from 'node:path'
 
 const BASE_URL = 'https://pawelkucia.com'
 
 const extractDate = async (filePath: string): Promise<string> => {
   try {
-    const raw = await readFile(filePath, 'utf-8')
-    const match = raw.match(/^---[\s\S]*?\ndate:\s*(.+?)\s*\n/)
+    const fh = await open(filePath, 'r')
+    const buf = Buffer.alloc(256)
+    const { bytesRead } = await fh.read(buf, 0, 256, 0)
+    await fh.close()
+    const head = buf.subarray(0, bytesRead).toString('utf-8')
+    const match = head.match(/\ndate:\s*(.+?)\s*\n/)
     if (match) return new Date(match[1]).toISOString().split('T')[0]
   } catch {}
   return new Date().toISOString().split('T')[0]
