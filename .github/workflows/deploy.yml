@@ -10,10 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "20.19"
       # Pick your own package manager and build script
       - run: npm install
       - run: npx nuxt build --preset github_pages
