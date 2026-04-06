@@ -61,6 +61,9 @@
       <!-- Testimonials Section -->
       <Testimonials />
 
+      <!-- Last Posts Section -->
+      <LastPosts />
+
       <!-- Contact Section -->
       <Contact />
     </div>
@@ -73,6 +76,7 @@ import TheHeader from '~/components/TheHeader.vue'
 import TechStack from '~/components/sections/TechStack.vue'
 import Experience from '~/components/sections/Experience.vue'
 import Testimonials from '~/components/sections/Testimonials.vue'
+import LastPosts from '~/components/sections/LastPosts.vue'
 import Contact from '~/components/sections/Contact.vue'
 
 const siteUrl = 'https://pawelkucia.com'
