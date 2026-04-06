@@ -75,6 +75,61 @@ import Experience from '~/components/sections/Experience.vue'
 import Testimonials from '~/components/sections/Testimonials.vue'
 import Contact from '~/components/sections/Contact.vue'
 
+const siteUrl = 'https://pawelkucia.com'
+const pageTitle = 'Paweł Kucia — Full Stack Engineer'
+const pageDescription = 'Full Stack Engineer passionate about creating beautiful and functional web applications, specializing in modern web technologies and cloud solutions.'
+const ogImage = `${siteUrl}/images/pawelkucia.jpg`
+
+useHead({
+  title: pageTitle,
+  link: [
+    { rel: 'canonical', href: siteUrl }
+  ],
+  meta: [
+    // Basic
+    { name: 'description', content: pageDescription },
+    { name: 'author', content: 'Paweł Kucia' },
+    { name: 'robots', content: 'index, follow' },
+    // Open Graph
+    { property: 'og:type', content: 'website' },
+    { property: 'og:title', content: pageTitle },
+    { property: 'og:description', content: pageDescription },
+    { property: 'og:url', content: siteUrl },
+    { property: 'og:site_name', content: 'Paweł Kucia' },
+    { property: 'og:locale', content: 'en_US' },
+    { property: 'og:image', content: ogImage },
+    { property: 'og:image:alt', content: 'Paweł Kucia — Full Stack Engineer' },
+    { property: 'og:image:type', content: 'image/jpeg' },
+    // Twitter Card
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: pageTitle },
+    { name: 'twitter:description', content: pageDescription },
+    { name: 'twitter:image', content: ogImage },
+    { name: 'twitter:image:alt', content: 'Paweł Kucia — Full Stack Engineer' },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Paweł Kucia',
+        url: siteUrl,
+        jobTitle: 'Full Stack Engineer',
+        description: pageDescription,
+        image: ogImage,
+        sameAs: [
+          'https://github.com/pawelkucia',
+          'https://linkedin.com/in/pawelkucia',
+          'https://x.com/pawelkucia',
+          'https://instagram.com/pawelkucia',
+          'https://facebook.com/pawelkucia.dev',
+        ],
+      })
+    }
+  ]
+})
+
 const typedText = ref(null)
 const typingContainer = ref(null)
 let hasStartedTyping = false
