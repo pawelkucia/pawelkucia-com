@@ -26,7 +26,9 @@ useHead({
   ]
 })
 
+import type { BlogPost } from '~/types/blog'
+
 const { data: posts } = await useAsyncData('blog-posts', () =>
-  queryContent('/blog').sort({ date: -1 }).find()
+  queryContent('/blog').sort({ date: -1 }).find() as unknown as Promise<BlogPost[]>
 )
 </script>

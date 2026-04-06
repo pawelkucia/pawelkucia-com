@@ -13,7 +13,7 @@
       </NuxtLink>
     </div>
     <div v-if="posts && posts.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <BlogPostCard v-for="post in posts" :key="post._path" :post="post as any" />
+      <BlogPostCard v-for="post in posts" :key="post._path" :post="post" />
     </div>
     <div class="mt-6 sm:hidden">
       <NuxtLink to="/blog" class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
@@ -24,7 +24,9 @@
 </template>
 
 <script setup lang="ts">
+import type { BlogPost } from '~/types/blog'
+
 const { data: posts } = await useAsyncData('last-posts', () =>
-  queryContent('/blog').sort({ date: -1 }).limit(3).find()
+  queryContent('/blog').sort({ date: -1 }).limit(3).find() as unknown as Promise<BlogPost[]>
 )
 </script>

@@ -34,15 +34,10 @@
 </template>
 
 <script setup lang="ts">
+import type { BlogPost } from '~/types/blog'
+
 const props = defineProps<{
-  post: {
-    _path: string
-    title: string
-    description: string
-    date: string | Date
-    tags?: string[]
-    cover?: boolean
-  }
+  post: BlogPost
   horizontal?: boolean
 }>()
 
