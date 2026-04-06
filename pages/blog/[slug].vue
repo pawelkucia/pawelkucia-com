@@ -53,18 +53,87 @@
 
 <script setup lang="ts">
 import TheHeader from '~/components/TheHeader.vue'
+
 const route = useRoute()
 const slug = route.params.slug as string
+const siteUrl = 'https://pawelkucia.com'
 
 const { data: post } = await useAsyncData(`blog-${slug}`, () =>
   queryContent('/blog', slug).findOne()
 )
 
 if (post.value) {
+  const canonicalUrl = `${siteUrl}/blog/${slug}`
+  const ogImage = `${siteUrl}/images/blog/${slug}.jpeg`
+
   useHead({
     title: `${post.value.title} — Paweł Kucia`,
+    link: [
+      { rel: 'canonical', href: canonicalUrl }
+    ],
     meta: [
-      { name: 'description', content: post.value.description }
+      // Basic
+      { name: 'description', content: post.value.description },
+      { name: 'author', content: 'Paweł Kucia' },
+      { name: 'robots', content: 'index, follow' },
+      // Open Graph
+      { property: 'og:type', content: 'article' },
+      { property: 'og:title', content: post.value.title },
+      { property: 'og:description', content: post.value.description },
+      { property: 'og:url', content: canonicalUrl },
+      { property: 'og:site_name', content: 'Paweł Kucia' },
+      { property: 'og:locale', content: 'en_US' },
+      ...(post.value.cover ? [
+        { property: 'og:image', content: ogImage },
+        { property: 'og:image:alt', content: post.value.title },
+        { property: 'og:image:type', content: 'image/jpeg' },
+      ] : []),
+      // Article
+      { property: 'article:published_time', content: new Date(post.value.date).toISOString() },
+      { property: 'article:author', content: 'Paweł Kucia' },
+      ...(post.value.tags ?? []).map((tag: string) => ({ property: 'article:tag', content: tag })),
+      // Twitter Card
+      { name: 'twitter:card', content: post.value.cover ? 'summary_large_image' : 'summary' },
+      { name: 'twitter:title', content: post.value.title },
+      { name: 'twitter:description', content: post.value.description },
+      ...(post.value.cover ? [
+        { name: 'twitter:image', content: ogImage },
+        { name: 'twitter:image:alt', content: post.value.title },
+      ] : []),
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.value.title,
+          description: post.value.description,
+          datePublished: new Date(post.value.date).toISOString(),
+          author: {
+            '@type': 'Person',
+            name: 'Paweł Kucia',
+            url: siteUrl,
+          },
+          publisher: {
+            '@type': 'Person',
+            name: 'Paweł Kucia',
+            url: siteUrl,
+          },
+          url: canonicalUrl,
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': canonicalUrl,
+          },
+          ...(post.value.cover ? {
+            image: {
+              '@type': 'ImageObject',
+              url: ogImage,
+            }
+          } : {}),
+          keywords: (post.value.tags ?? []).join(', '),
+        })
+      }
     ]
   })
 }
