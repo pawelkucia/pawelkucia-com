@@ -2,7 +2,7 @@
   <section id="last-posts" class="container mx-auto px-4 py-20">
     <div class="flex items-end justify-between gap-8 mb-8">
       <div>
-        <h2 class="text-3xl font-bold text-black dark:text-white mb-2">Last Posts</h2>
+        <h2 class="text-3xl font-bold text-black dark:text-white mb-2">Recent Posts</h2>
         <p class="text-lg text-gray-700 dark:text-gray-400">Latest notes on development, architecture, and tooling.</p>
       </div>
       <NuxtLink
