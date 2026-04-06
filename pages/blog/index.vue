@@ -13,12 +13,12 @@
           :key="post._path"
           class="border border-gray-200 dark:border-blue-900/40 rounded-2xl overflow-hidden bg-white/40 dark:bg-blue-900/10 backdrop-blur-sm hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-colors"
         >
-          <NuxtLink :to="post._path" class="group flex gap-0">
+          <NuxtLink :to="post._path" class="group flex flex-col sm:flex-row gap-0">
             <img
               v-if="post.cover"
               :src="`/images/blog/${getSlug(post._path ?? '')}.jpeg`"
               :alt="post.title"
-              class="w-36 h-36 sm:w-48 sm:h-48 flex-shrink-0 object-cover"
+              class="w-full h-48 sm:w-48 sm:h-auto flex-shrink-0 object-cover"
             />
             <div class="p-6 flex flex-col justify-between min-w-0">
               <div>
