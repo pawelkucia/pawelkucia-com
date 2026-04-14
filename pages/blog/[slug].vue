@@ -67,7 +67,7 @@ if (post.value) {
   const ogImage = `${siteUrl}/images/blog/${slug}.jpeg`
 
   useHead({
-    title: `${post.value.title} — Paweł Kucia`,
+    title: `${post.value.title} - Paweł Kucia`,
     link: [
       { rel: 'canonical', href: canonicalUrl }
     ],

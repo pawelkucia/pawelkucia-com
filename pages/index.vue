@@ -80,7 +80,7 @@ import RecentPosts from '~/components/sections/RecentPosts.vue'
 import Contact from '~/components/sections/Contact.vue'
 
 const siteUrl = 'https://pawelkucia.com'
-const pageTitle = 'Paweł Kucia — Full Stack Engineer'
+const pageTitle = 'Paweł Kucia - Full Stack Engineer'
 const pageDescription = 'Full Stack Engineer passionate about creating beautiful and functional web applications, specializing in modern web technologies and cloud solutions.'
 const ogImage = `${siteUrl}/images/pawelkucia.jpg`
 

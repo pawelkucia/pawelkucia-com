@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import TheHeader from '~/components/TheHeader.vue'
 useHead({
-  title: 'Blog — Paweł Kucia',
+  title: 'Blog - Paweł Kucia',
   meta: [
     { name: 'description', content: 'Notes on full-stack development, architecture, and tooling by Paweł Kucia.' }
   ]

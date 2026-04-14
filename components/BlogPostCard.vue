@@ -6,8 +6,8 @@
         :src="`/images/blog/${slug}.jpeg`"
         :alt="post.title"
         :class="horizontal
-          ? 'w-full h-48 sm:w-48 sm:h-auto flex-shrink-0 object-cover'
-          : 'w-full h-48 object-cover flex-shrink-0'"
+          ? 'w-full h-48 sm:w-48 sm:h-auto flex-shrink-0 object-cover transition-transform duration-300 group-hover:scale-110'
+          : 'w-full h-48 object-cover flex-shrink-0 transition-transform duration-300 group-hover:scale-110'"
       />
       <div class="p-6 flex flex-col justify-between flex-1 min-w-0">
         <div>
