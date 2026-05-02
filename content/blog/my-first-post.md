@@ -1,7 +1,7 @@
 ---
 title: "My First Post"
 description: "An introduction to this blog — what to expect and why I'm writing."
-date: 2026-02-22
+date: 2026-02-20
 tags: [nuxt, vue, javascript]
 cover: true
 ---
