@@ -1,6 +1,6 @@
 ---
 title: "Enhancing Developer Productivity: Visual Studio April 2026 Update"
-description: "The latest Visual Studio update focuses on agentic workflows and better GitHub Copilot integration to elevate development and debugging.
+description: "The latest Visual Studio update focuses on agentic workflows and better GitHub Copilot integration to elevate development and debugging."
 date: 2026-04-30
 tags: [VisualStudio, GitHubCopilot, developer, AI, debugging]
 cover: true
