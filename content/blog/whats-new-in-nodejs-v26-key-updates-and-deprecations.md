@@ -1,7 +1,7 @@
 ---
 title: "What’s New in Node.js v26: Key Updates and Deprecations"
 description: "Explore the major changes in Node.js v26, including the default enablement of Temporal, V8 14.6 upgrade, Undici 8 integration, and important deprecations."
-date: 2024-06-27
+date: 2026-05-05
 tags: [nodejs, javascript, v8, undici, temporal]
 cover: true
 ---
