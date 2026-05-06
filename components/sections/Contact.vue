@@ -1,7 +1,7 @@
 <template>
   <section id="contact" class="container mx-auto px-4 py-8">
     <h2 class="text-3xl font-semibold mb-2 text-black dark:text-white">Contact</h2>
-    <p class="text-lg mb-10 text-gray-700 dark:text-gray-300 max-w-3xl">
+    <p class="text-lg mb-10 text-gray-700 dark:text-gray-400 max-w-3xl">
       Feel free to reach out to me through any of the following platforms:
     </p>
     <div class="flex flex-col items-center space-y-8">

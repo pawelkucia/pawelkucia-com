@@ -1,7 +1,7 @@
 <template>
   <nav aria-label="Breadcrumb" class="mb-8">
     <ol class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 flex-wrap">
-      <li v-for="(crumb, index) in crumbs" :key="index" class="flex items-center gap-2">
+      <li v-for="(crumb, index) in crumbs" :key="index" class="flex items-center gap-2" :class="{ 'flex-1 min-w-0': !crumb.to }">
         <span v-if="index > 0" aria-hidden="true">/</span>
         <NuxtLink
           v-if="crumb.to"
@@ -10,7 +10,7 @@
         >
           {{ crumb.label }}
         </NuxtLink>
-        <span v-else class="text-gray-900 dark:text-gray-100" aria-current="page">
+        <span v-else class="text-gray-900 dark:text-gray-100 block truncate" aria-current="page">
           {{ crumb.label }}
         </span>
       </li>

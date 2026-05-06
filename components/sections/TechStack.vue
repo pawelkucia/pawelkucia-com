@@ -1,7 +1,7 @@
 <template>
   <section id="tech-stack" class="container mx-auto px-4 py-8">
     <h2 class="text-3xl font-semibold mb-2 text-black dark:text-white">Tech Stack</h2>
-    <p class="text-lg mb-10 text-gray-700 dark:text-gray-300 max-w-3xl">
+    <p class="text-lg mb-10 text-gray-700 dark:text-gray-400 max-w-3xl">
       Here are some of the technologies and tools I work with to build modern web applications:
     </p>
     <div class="flex flex-wrap gap-3 max-w-4xl mx-auto justify-center">
