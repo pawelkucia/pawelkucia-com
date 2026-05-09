@@ -42,6 +42,9 @@ export default defineNuxtConfig({
       title: 'Paweł Kucia - Full Stack Engineer',
       meta: [
         { name: 'description', content: 'Paweł Kucia Full Stack Engineer Portfolio' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
       ]
     }
   }

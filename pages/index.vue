@@ -15,15 +15,15 @@
               <span ref="typedText"></span><span class="cursor">|</span>
             </p>
             <div class="flex gap-4 justify-center md:justify-start">
-              <a 
-                href="#tech-stack" 
+              <a
+                href="#tech-stack"
                 class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors"
                 @click.prevent="scrollToSection('tech-stack')"
               >
                 Show tech stack
               </a>
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-colors"
                 @click.prevent="scrollToSection('contact')"
               >
@@ -31,7 +31,7 @@
               </a>
             </div>
             <div class="flex gap-6 mt-8 justify-center md:justify-start">
-              <a v-for="social in socialLinks" 
+              <a v-for="social in socialLinks"
                  :key="social.name"
                  :href="social.url"
                  :title="social.name"
@@ -43,9 +43,9 @@
             </div>
           </div>
           <div class="flex-shrink-0 relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] rounded-full bg-gray-100 dark:bg-blue-900/30 flex items-center justify-center">
-            <img 
-              src="/images/pawelkucia.jpg" 
-              alt="Paweł Kucia"  
+            <img
+              :src="'/images/pawelkucia.jpg'"
+              alt="Paweł Kucia"
               class="w-[280px] h-[280px] lg:w-[380px] lg:h-[380px] rounded-full object-cover"
             />
           </div>

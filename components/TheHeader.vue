@@ -1,50 +1,48 @@
 <template>
   <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
-    <div 
+    <div
       class="container mx-auto px-4 py-0 mt-2"
     >
       <div class="flex justify-between items-center">
         <div :class="['flex items-center gap-2 transition-all duration-300',
-isScrolled || isOpen ? 'px-4 bg-primary-light/40 dark:bg-primary-dark/30 backdrop-blur-md shadow-lg dark:shadow-blue-500/30' : 'bg-transparent', 
-        isOpen ? 'rounded-2xl' :'rounded-full'
+isScrolled || isOpen ? 'p-2 bg-primary-light/40 rounded-2xl dark:bg-primary-dark/30 backdrop-blur-md shadow-lg dark:shadow-blue-500/30' : 'bg-transparent'
         ]">
-          <span class="text-black dark:text-white text-3xl font-bold">PK.</span>
+          <img :src="colorMode.value === 'dark' ? '/images/logo_white.svg' : '/images/logo_black.svg'" alt="PK" class="h-8" />
         </div>
         <div :class="['py-2 flex items-center gap-4 transition-all duration-300',
-          isScrolled || isOpen ? 'px-4 bg-primary-light/40 dark:bg-primary-dark/30 backdrop-blur-md shadow-lg dark:shadow-blue-500/30' : 'bg-transparent', 
-        isOpen ? 'rounded-2xl' :'rounded-full'
+          isScrolled || isOpen ? 'px-4 bg-primary-light/40 rounded-2xl dark:bg-primary-dark/30 backdrop-blur-md shadow-lg dark:shadow-blue-500/30' : 'bg-transparent'
         ]">
           <Navigation />
           <!-- Mobile Menu -->
           <div class="md:hidden flex items-center gap-4">
-            
-            <button 
-              @click="toggleColorMode" 
+
+            <button
+              @click="toggleColorMode"
               class="p-0 h-[24px]"
               aria-label="Toggle theme"
             >
-              <font-awesome-icon 
-                :icon="['far', colorMode.value === 'dark' ? 'sun' : 'moon']" 
+              <font-awesome-icon
+                :icon="['far', colorMode.value === 'dark' ? 'sun' : 'moon']"
                 class="text-2xl text-orange-600 hover:text-orange-500 dark:hover:text-orange-500 transition-colors"
               />
             </button>
 <!-- Hamburger Button -->
-            <button 
+            <button
               @click="isOpen = !isOpen"
               class="p-0 w-[22px] h-[24px]"
               aria-label="Toggle menu"
             >
-              <font-awesome-icon 
-                :icon="['fas', isOpen ? 'times' : 'bars']" 
+              <font-awesome-icon
+                :icon="['fas', isOpen ? 'times' : 'bars']"
                 class="text-2xl"
               />
             </button>
-            
+
           </div>
         </div>
       </div>
       <!-- Mobile Menu -->
-            <div 
+            <div
               v-show="isOpen"
               class="w-[200px] float-right mt-4 p-4 px-4 bg-primary-light/40 dark:bg-primary-dark/40 backdrop-blur-md shadow-lg dark:shadow-blue-500/30 rounded-2xl"
             >
