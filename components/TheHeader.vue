@@ -7,7 +7,9 @@
         <div :class="['flex items-center gap-2 transition-all duration-300',
 isScrolled || isOpen ? 'p-2 bg-primary-light/40 rounded-2xl dark:bg-primary-dark/30 backdrop-blur-md shadow-lg dark:shadow-blue-500/30' : 'bg-transparent'
         ]">
-          <img :src="colorMode.value === 'dark' ? '/images/logo_white.svg' : '/images/logo_black.svg'" alt="PK" class="h-8" />
+          <NuxtLink to="/">
+            <img :src="colorMode.value === 'dark' ? '/images/logo_white.svg' : '/images/logo_black.svg'" alt="PK" class="h-8" />
+          </NuxtLink>
         </div>
         <div :class="['py-2 flex items-center gap-4 transition-all duration-300',
           isScrolled || isOpen ? 'px-4 bg-primary-light/40 rounded-2xl dark:bg-primary-dark/30 backdrop-blur-md shadow-lg dark:shadow-blue-500/30' : 'bg-transparent'
